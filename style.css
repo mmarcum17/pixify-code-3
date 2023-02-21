@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+}
+
+/* #homepage-image {
+  height: 50%;
+  width: 50%;
+} */
+
+.main-content-container-index {
+  background-image: url("homepage.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.landing-page-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+  font-family: Montserrat;
+  color: #7BFFE9;
+}
