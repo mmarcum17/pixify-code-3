@@ -49,3 +49,97 @@ const imageSets = [
     }
 
   ];
+
+
+  const displayMenu = (list)=> {
+    const photoSubmissionContainer = document.getElementById("photo-submission-container");
+    const allPhotos = list.map(item =>{
+        return `<a class="main-submission" href="detailspage.html?id=${item.id.imageSets}">
+                  <img src=${item.images} alt=${item.name} class="photo-image" />
+                  <div class="photo-info">
+                    <p>${item.name}</p>
+                    <p class="item-category">${item.title}</p>
+                  </div>
+                </a>`;
+          });
+    photoSubmissionContainer.innerHTML = allPhotos.join("");
+}
+
+window.onload = function(){displayMenu(imageSets)};
+
+
+  const up = ()=>{  
+    if (numbers.count >= imageSets[values.par].images.length-1) {
+      numbers.count = numbers.count; 
+    } else {
+      numbers.count++;
+      selectors.img.src = imageSets[values.par].images[numbers.count];
+    }
+  };
+
+  const dwn = ()=>{
+    if (numbers.count <= 0) {
+      numbers.count = numbers.count; 
+    } else {
+      numbers.count--;
+      selectors.img.src = imageSets[values.par].images[numbers.count];
+    }
+  }; 
+
+
+
+const themeButton = document.querySelector(".darkMode");
+const body = document.querySelector("body");
+const labels = document.querySelectorAll("label");
+const toggleDarkMode = () => {
+    if(body.style.backgroundColor === "rgb(42, 59, 73)"){
+        body.style.backgroundColor = "white";
+        themeButton.innerHTML = "Dark Mode";
+        menuIcon.style.color = "rgb(53, 50, 50)";
+        for(let i = 0; i < labels.length; i++){
+            labels[i].style.color = "black";
+        }
+    } else {
+        body.style.backgroundColor="#2A3B49";
+        themeButton.innerHTML ="Light Mode";
+        menuIcon.style.color="white"
+        for (let i = 0; i < labels.length; i++) {
+        labels[i].style.color = "white";
+        };
+    }
+};
+themeButton.onclick = toggleDarkMode;
+
+const submitBtn = document.querySelector("#submit-button");
+
+submitBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const name = document.querySelector('input[name="name"]').value;
+    const entry = document.querySelector('input[name="entry"]').value;
+    const imageURL1 = document.querySelector('input[name="imageURL1"]').value;
+    const imageURL2 = document.querySelector('input[name="imageURL2"]').value;
+    const imageURL3 = document.querySelector('input[name="imageURL3"]').value;
+    const imageURL4 = document.querySelector('input[name="imageURL4"]').value;
+    const imageURL5 = document.querySelector('input[name="imageURL5"]').value;
+   
+    
+
+    const newEntry = document.createElement('div');
+    newEntry.innerHTML = `<img src=${imageURL1} alt=${name} class="photo-image" />
+    <div class="photo-info">
+      <p>${name}</p>
+      <p class="item-entry">${entry}</p>
+  </div>`
+
+    const photoContainer = document.querySelector("#photo-container");
+    mealContainer.insertBefore(newPhoto,photoContainer.firstChild);
+
+    document.querySelector('input[name="name"]').value = "";
+    document.querySelector('input[name="entry"]').value = "";
+    document.querySelector('input[name="imageURL1"]').value = "";
+    document.querySelector('input[name="imageURL2"]').value = "";
+    document.querySelector('input[name="imageURL3"]').value = "";
+    document.querySelector('input[name="imageURL4"]').value = "";
+    document.querySelector('input[name="imageURL5"]').value = "";
+    });

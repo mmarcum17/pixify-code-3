@@ -4,46 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="style.css" href = "style.css"/>
+    <link rel="stylesheet" href = "style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <title>Submissions Page</title>
 </head>
 <body>
     <nav class = "details-page-nav">
         <div class ="logo-nav">
-          <h1>PIXIFY</h1>
+          <h1 href="index.html" class = "logo">PIXIFY</h1>
         </div>
         <div class = "links-details">
           <a href="/submissionspage.html">2023 Submissions</a>
-          <a href = "/aboutuspage.html">About</a>
-          <a href="">Dark Mode</a>
+          <a class = "darkMode" onclick="toggleDarkMode()">Dark Mode</a>
         </div>
       </nav>
+      <section>
       <h1>2023 Submissions</h1>  
-      <div class="photo-submission-container">
-            <img>
-            <img>
-            <img>
-            <img>
-            <img>
-            <img>
-            <img>
-            <img>
-      </div>
+      <div id ="photo-submission-container"></div>
+
       <div class ="photo-submission-form">
         <form>
             <h3>Submit Your Work</h3>
-            <input type="text" placeholder="Name">
-            <input type="text" placeholder="Title of Your Entry">
-            <input type="text" placeholder="Image URL 1">
-            <input type="text" placeholder="Image URL 2">
-            <input type="text" placeholder="Image URL 3">
-            <input type="text" placeholder="Image URL 4">
-            <input type="text" placeholder="Image URL 5">
-            <button class="submit-button">Submit Now</button>
+            <input type="text" name = "name" placeholder="Name" required>
+            <input type="text" name = "entry" placeholder="Title of Your Entry" required>
+            <input type="text" name = "imageURL1" placeholder="Image URL 1" required>
+            <input type="text" name= "imageURL2" placeholder="Image URL 2" required>
+            <input type="text" name = "imageURL3" placeholder="Image URL 3" required>
+            <input type="text"  name = "imageURL4" placeholder="Image URL 4" required>
+            <input type="text" name = "imageURL5" placeholder="Image URL 5" required>
+            <button id="submit-button">Submit Now</button>
       </div>
-    
+    </section>
+    <footer>
 
-
+    </footer>
 <script src="script.js"></script>    
 </body>
 </html>
