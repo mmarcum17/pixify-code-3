@@ -54,7 +54,7 @@ const imageSets = [
   const displayMenu = (list)=> {
     const photoSubmissionContainer = document.getElementById("photo-submission-container");
     const allPhotos = list.map(item =>{
-        return `<a class="main-submission" href="detailspage.html?id=${item.id.imageSets}">
+        return `<a class="main-submission" href="detailspage.html?id=${item.id}">
                   <img src=${item.images} alt=${item.name} class="photo-image" />
                   <div class="photo-info">
                     <p>${item.name}</p>

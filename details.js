@@ -51,47 +51,53 @@ const photos = [
   ];
 
 
-let currentId;
-let currentImages;
-
-window.onload = function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    console.log(urlParams);
-    currentId = urlParams.get("images[0]");
-    console.log(currentId);
-
-    const currentPhoto = photos.filter(item => item.id === currentId);
-    currentImages = currentPhoto[0].name;
-    const photo = `<div class="current-photo">
-      <div class="current-photo-info">
-        <h2>${currentPhoto[0].name}</h2>
-        <p class="current-photo-title">${currentPhoto[0].title}</p>
-      </div>
-      <img src=${currentPhoto[0].images} alt=${currentPhoto[0].name} class="current-photo-image" />
-    </div>`;
-
-    const detailsContainer = document.querySelector("#details-container");
-    detailsContainer.innerHTML = photo;
-};
-
-
-  const up = ()=>{  
-    if (numbers.count >= imageSets[values.par].images.length-1) {
-      numbers.count = numbers.count; 
-    } else {
-      numbers.count++;
-      selectors.img.src = imageSets[values.par].images[numbers.count];
-    }
+  let currentId;
+  let currentImages;
+  let count = 0; 
+  
+  window.onload = function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      console.log(urlParams);
+      currentId = urlParams.get("id");
+      console.log(currentId);
+  
+      const currentPhoto = photos.filter(item => item.id == currentId);
+      console.log(currentPhoto); 
+      currentImages = currentPhoto[0].name;
+      const photo = `<div class="current-photo">
+        <div class="current-photo-info">
+          <h2>${currentPhoto[0].name}</h2><br>
+          <p class="current-photo-title">${currentPhoto[0].title}</p>
+        </div>
+        <img src=${currentPhoto[0].images} alt=${currentPhoto[0].name} class="current-photo-image" />
+      </div>`;
+  
+      const detailsContainer = document.querySelector("#details-container");
+      detailsContainer.innerHTML = photo;
   };
+  
+  
 
-  const dwn = ()=>{
-    if (numbers.count <= 0) {
-      numbers.count = numbers.count; 
-    } else {
-      numbers.count--;
-      selectors.img.src = imageSets[values.par].images[numbers.count];
-    }
-  }; 
+    const up = ()=>{  
+      const newImg = document.querySelector(".current-photo-image");
+  
+      if (count >= photos[Number(currentId) - 1].images.length-1) {
+        count = count; 
+      } else {
+        count++;
+        newImg.src = photos[Number(currentId) - 1].images[count];
+      }
+    };
+  
+    const dwn = ()=>{
+      const newImg = document.querySelector(".current-photo-image");
+      if (count <= 0) {
+        count = count; 
+      } else {
+        count--;
+        newImg.src = photos[Number(currentId) - 1].images[count];
+      }
+    }; 
 
 
 const themeButton = document.querySelector(".darkMode");
