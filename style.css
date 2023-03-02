@@ -107,7 +107,7 @@ footer {
   align-content: center;
   border-radius: 15px;
   align-items: center;
-  margin-left: 25%;
+  margin-left: 30%;
 }
 
 #submissions-h1 {
@@ -120,7 +120,7 @@ footer {
   display: grid;                      
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   padding:0 20px;
-  min-height:100vh;
+  min-height:80vh;
   width:70%;
 }
 
@@ -153,7 +153,6 @@ footer {
 } 
 
 
-
 .photo-info{
   display: flex;
   align-items: center;
@@ -178,15 +177,21 @@ input {
     display: grid; 
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-template-rows: repeat(auto-fill,minmax(300px, 1fr));
+    padding-bottom: 20%;
   }
 
-  #photo-submission-container, .photo-submission-form, #details-container,.main-content-container-index {
+  #photo-submission-container, .photo-submission-form, #details-container,.main-content-container-index{
       display: flex;
       flex-direction: column;
       align-items: center;
       padding:0 20px;
       height:270px;
       width:100%;
+  }
+
+  .landing-page-nav, .details-page-nav {
+    display: flex;
+    flex-direction: column;
   }
 
   .main-content-container-index {
@@ -196,5 +201,9 @@ input {
     background-size: cover;
     height: 100%;
     padding: 50%;
+  }
+
+  .photo-submission-form {
+    justify-content: flex-end;
   }
 }

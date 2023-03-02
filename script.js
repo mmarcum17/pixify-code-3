@@ -133,7 +133,7 @@ submitBtn.addEventListener("click", (e) => {
   </div>`
 
     const photoContainer = document.querySelector("#photo-container");
-    mealContainer.insertBefore(newPhoto,photoContainer.firstChild);
+    photoContainer.insertBefore(newPhoto,photoContainer.firstChild);
 
     document.querySelector('input[name="name"]').value = "";
     document.querySelector('input[name="entry"]').value = "";
