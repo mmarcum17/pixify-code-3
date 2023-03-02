@@ -66,7 +66,7 @@ const photos = [
       currentImages = currentPhoto[0].name;
       const photo = `<div class="current-photo">
         <div class="current-photo-info">
-          <h2>${currentPhoto[0].name}</h2><br>
+          <h2>${currentPhoto[0].name}</h2>
           <p class="current-photo-title">${currentPhoto[0].title}</p>
         </div>
         <img src=${currentPhoto[0].images} alt=${currentPhoto[0].name} class="current-photo-image" />
